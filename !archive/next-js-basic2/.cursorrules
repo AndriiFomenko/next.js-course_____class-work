@@ -1,0 +1,32 @@
+// # Next.js 15 Promise-based Parameters Rule
+
+// Purpose: Ensure proper handling of dynamic parameters and search parameters in Next.js 15, which are now Promise-based.
+// Category: Frontend Frameworks and Libraries
+
+// Rule: In Next.js 15, always use `await` to access `params` and `searchParams` in server components or route handlers, as they are returned as Promises. In client components, use the React `use` hook to resolve these parameters. Synchronous access is supported for backward compatibility but will be deprecated in future versions.
+
+// Example for Server Component:
+export default async function Page({ params, searchParams }) {
+  const { slug } = await params; // Await params
+  const { query } = await searchParams; // Await searchParams
+  return <div>Slug: {slug}, Query: {query}</div>;
+}
+
+// Example for Client Component:
+'use client';
+import { use } from 'react';
+const Page = () => {
+  const { slug } = use(params); // Use React's use hook
+  const { query } = use(searchParams); // Use React's use hook
+  return <div>Slug: {slug}, Query: {query}</div>;
+};
+export default Page;
+
+// Best Practices:
+// - Always explicitly await params and searchParams in server components to avoid runtime errors.
+// - Use try-catch blocks when awaiting params or searchParams to handle potential errors gracefully.
+// - In client components, ensure the `use` hook is imported from 'react' and used correctly.
+// - Avoid relying on synchronous access to maintain future compatibility with Next.js updates.
+// - Use `export default async function` for server components and arrow functions for client components to maintain consistent project style.
+
+// Reference: Next.js 15 Documentation - Upgrading to Version 15 (https://nextjs.org/docs/app/building-your-application/upgrading/version-15)
