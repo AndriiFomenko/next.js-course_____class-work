@@ -1,5 +1,6 @@
 import {
   FaBoxOpen,
+  FaChartLine,
   FaHome,
   FaInfoCircle,
   FaKey,
@@ -13,6 +14,7 @@ import NavLink from '@/components/NavLink'
 const navItems = [
   { href: '/', label: <FaHome className="text-xl" />, isIcon: true, tooltip: 'Home Page' },
   { href: '/about', label: <FaInfoCircle className="text-xl" />, isIcon: true, tooltip: 'About Page' },
+  { href: '/dashboard', label: <FaChartLine className="text-xl" />, isIcon: true, tooltip: 'Dashboard' },
   { href: '/posts', label: <FaNewspaper className="text-xl" />, isIcon: true, tooltip: 'Posts Page' },
   { href: '/products', label: <FaBoxOpen className="text-xl" />, isIcon: true, tooltip: 'Products Page' },
   { href: '/order-product', label: <FaShoppingBag className="text-xl" />, isIcon: true, tooltip: 'Order Product Page' },
