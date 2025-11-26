@@ -3,67 +3,68 @@ export type Post = {
   title: string
   body: string
   userId: number
+  [key: string]: string | number
 }
 
 const initialPosts: Post[] = [
   {
-    id: 1,
-    title: 'Post 1',
-    body: 'This is the first post',
-    userId: 1
+    id: 5,
+    title: 'Exploring TypeScript',
+    body: 'Gamma content',
+    userId: 3
   },
   {
     id: 2,
-    title: 'Post 2',
-    body: 'This is the second post',
+    title: 'Advanced React Patterns',
+    body: 'Alpha content',
     userId: 1
   },
   {
-    id: 3,
-    title: 'Post 3',
-    body: 'This is the third post',
-    userId: 2
-  },
-  {
-    id: 4,
-    title: 'Post 4',
-    body: 'This is the fourth post',
-    userId: 2
-  },
-  {
-    id: 5,
-    title: 'Post 5',
-    body: 'This is the fifth post',
-    userId: 3
-  },
-  {
-    id: 6,
-    title: 'Post 6',
-    body: 'This is the sixth post',
-    userId: 3
-  },
-  {
-    id: 7,
-    title: 'Post 7',
-    body: 'This is the seventh post',
-    userId: 4
-  },
-  {
     id: 8,
-    title: 'Post 8',
-    body: 'This is the eighth post',
+    title: 'Database Design',
+    body: 'Zeta content',
     userId: 4
   },
   {
-    id: 9,
-    title: 'Post 9',
-    body: 'This is the ninth post',
-    userId: 5
+    id: 1,
+    title: 'Getting Started with Next.js',
+    body: 'Beta content',
+    userId: 2
   },
   {
     id: 10,
-    title: 'Post 10',
-    body: 'This is the tenth post',
+    title: 'API Development',
+    body: 'Theta content',
+    userId: 5
+  },
+  {
+    id: 3,
+    title: 'CSS Grid Layout',
+    body: 'Delta content',
+    userId: 1
+  },
+  {
+    id: 7,
+    title: 'Testing Strategies',
+    body: 'Epsilon content',
+    userId: 3
+  },
+  {
+    id: 4,
+    title: 'Performance Optimization',
+    body: 'Eta content',
+    userId: 2
+  },
+  {
+    id: 9,
+    title: 'Security Best Practices',
+    body: 'Iota content',
+    userId: 4
+  },
+  {
+    id: 6,
+    title: 'Microservices Architecture',
+    body: 'Kappa content',
     userId: 5
   }
 ]

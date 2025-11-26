@@ -1,5 +1,6 @@
 import { posts } from '../data'
 import Link from 'next/link'
+import PostNotFound from '../../../components/PostNotFound'
 
 export const dynamic = 'force-dynamic'
 
@@ -9,20 +10,7 @@ export default async function PostPage({ params }: { params: Promise<{ id: strin
   const post = posts.find((p) => p.id === id)
 
   if (!post) {
-    return (
-      <div className="min-h-screen flex items-center justify-center bg-slate-950 text-slate-400">
-        <div className="text-center">
-          <h1 className="text-4xl font-bold mb-4">404</h1>
-          <p className="mb-8">Post not found</p>
-          <Link
-            href="/posts"
-            className="px-6 py-2 rounded-full bg-cyan-500/10 text-cyan-400 hover:bg-cyan-500/20 transition-colors"
-          >
-            Back to Posts
-          </Link>
-        </div>
-      </div>
-    )
+    return <PostNotFound />
   }
 
   return (
